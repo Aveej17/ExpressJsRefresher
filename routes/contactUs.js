@@ -1,14 +1,11 @@
 const express = require('express');
-const path = require('path');
+
 
 const router = express.Router();
 
-const rootDir = require('../util/path');
+const Ctrl = require('../controllers/contactUsCtrl')
 
 // /admin/add-product  => GET
-router.get('/',(req, res, next)=>{
-    // console.log("In the middle ware")
-    res.sendFile(path.join(rootDir,  "views", "contactUs.html"));
-});
+router.get('/',Ctrl.contactUsCtrl);
 
 module.exports = router;
